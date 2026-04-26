@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bazaar Radar</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true">↗</span>
+          <div>
+            <p class="eyebrow">Inspired by market maps / AI search / trading desks</p>
+            <h1>Bazaar Radar</h1>
+          </div>
+        </div>
+        <div class="design-note">
+          <strong>Business waves</strong>
+          <span>spot what is moving city to city</span>
+        </div>
+        <div class="topbar-actions">
+          <a class="ghost-button link-button" href="pitch-coach.html">Pitch coach</a>
+          <button class="ghost-button" id="resetFilters" type="button">Reset</button>
+          <button class="print-button" id="printReport" type="button">Founder memo</button>
+        </div>
+      </header>
+
+      <section class="command-rail" aria-label="Scan controls">
+        <div class="rail-label">
+          <span>Run scan</span>
+          <strong>City arbitrage</strong>
+        </div>
+        <label>
+          <span>Target city</span>
+          <select id="cityFilter"></select>
+        </label>
+
+        <label>
+          <span>Sector</span>
+          <select id="sectorFilter"></select>
+        </label>
+
+        <label>
+          <span>Budget</span>
+          <select id="budgetFilter">
+            <option value="99999999">Any budget</option>
+            <option value="500000">Under Rs 5L</option>
+            <option value="1000000">Under Rs 10L</option>
+            <option value="2000000">Under Rs 20L</option>
+            <option value="3500000">Under Rs 35L</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Radius</span>
+          <select id="radiusFilter">
+            <option value="99">Any radius</option>
+            <option value="1">1 km</option>
+            <option value="2">2 km</option>
+            <option value="3">3 km</option>
+            <option value="5">5 km</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Risk</span>
+          <select id="riskFilter">
+            <option value="99">Any risk</option>
+            <option value="35">Low risk</option>
+            <option value="55">Medium risk</option>
+            <option value="75">Higher risk</option>
+          </select>
+        </label>
+
+        <details class="advanced-controls">
+          <summary>Advanced</summary>
+          <label>
+            <span>Locality</span>
+            <select id="localityFilter"></select>
+          </label>
+
+          <label>
+            <span>Footfall</span>
+            <select id="footfallFilter">
+              <option value="0">Any footfall</option>
+              <option value="1500">1500+ daily</option>
+              <option value="3000">3000+ daily</option>
+              <option value="5000">5000+ daily</option>
+            </select>
+          </label>
+        </details>
+      </section>
+
+      <main class="workspace">
+        <section class="cards-panel signal-stack" aria-label="Ranked opportunities">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Signal stack</p>
+              <h2><span id="matchCount">0</span> market windows</h2>
+            </div>
+            <span class="live-dot">Watchlist</span>
+          </div>
+          <div id="opportunityCards" class="opportunity-grid"></div>
+        </section>
+
+        <section class="transfer-canvas" aria-label="Market transfer canvas">
+          <div id="canvasContent"></div>
+          <div class="proof-timeline">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Proof receipts</p>
+                <h2>Street Pulse</h2>
+              </div>
+              <span id="pulseCity" class="mono"></span>
+            </div>
+            <div id="timeline" class="timeline"></div>
+          </div>
+        </section>
+
+        <aside class="plan-panel" aria-label="Business plan">
+          <div id="planContent"></div>
+          <section class="scout-panel" aria-label="Scout assistant prompts">
+            <div class="chat-head">
+              <strong>Scout</strong>
+              <span>field analyst</span>
+            </div>
+            <div class="prompt-chips">
+              <button type="button">Make this cheaper</button>
+              <button type="button">Find the unfair wedge</button>
+              <button type="button">Break this plan</button>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="./data/opportunities.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
