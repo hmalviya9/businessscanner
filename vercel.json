@@ -23,15 +23,5 @@
         }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/pitch-coach",
-      "destination": "/pitch-coach.html"
-    },
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
   ]
 }
